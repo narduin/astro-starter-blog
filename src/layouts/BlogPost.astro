@@ -1,5 +1,4 @@
 ---
-// on importe les styles globaux
 import "../styles/global.css";
 // on importe les composants header et footer
 import Header from "../components/Header.astro";
@@ -16,11 +15,25 @@ import Footer from "../components/Footer.astro";
 		<title>Notre super blog</title>
 	</head>
 	<body>
-		<Header />
+		<Header/>
 		<main>
-			<!-- La balise slot sera remplacée par le contenu des pages dans lesquelles on aura importé le layout Base.astro -->
-			<slot />
+			<!-- La balise slot sera remplacée par le contenu des pages dans lesquelles on aura importé le layout BlogPost.astro -->
+			<article>
+				<slot />
+			</article>
 		</main>
 		<Footer />
 	</body>
 </html>
+
+<style>
+	main {
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 900px;
+	}
+	article {
+		padding: 20px;
+		background-color: #bbb;
+	}
+</style>
